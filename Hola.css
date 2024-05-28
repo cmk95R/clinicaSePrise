@@ -1,0 +1,16 @@
+.izquierdado{
+    text-align: start;
+}
+
+.centrado{
+    text-align: center;
+    vertical-align: middle;
+}
+
+.derechado{
+    text-align: end;
+}
+
+.borde{
+    border-color: black;
+}
