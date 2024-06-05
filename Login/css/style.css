@@ -3,17 +3,21 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+/*background-size: calc(100% - 40px);
+background-size: cover;*/
 body {
     font-family: Helvetica Neue, sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-image: url(cielo2.webp);
+    background-image: url(Logo12.png);
+    background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-attachment: fixed;
+    
+    /*background-size: cover;*/
 }
 
 form {
@@ -23,7 +27,8 @@ form {
     width: 400px;
     box-shadow: 0 0 20px rgb(0, 0, 0, 0.2);
     border-radius: 15px;
-    background-color: rgb(246, 91, 91);
+    background-color: #33d0b6;
+
 }
 
 h2 {
@@ -44,26 +49,27 @@ label, p {
 
 input {
     padding: 17px 11px;
-    border: 1px solid #ffc801;
+    border: 1px solid #ffffff;
     border-radius: 25px;
     margin-bottom: 25px;
-    background-color: rgb(255, 208, 219);
+    background-color: rgb(255, 255, 255);
     outline: none;
-    color: #ffc801;
+    color: #f1f1f1;
     font-size: 17px;
 
 }
 
 .btn-1 { 
-    background-color: #ffc801 ;
+    background-color: #ffffff ;
     font-size: 15px;
-    color:antiquewhite;
+    color:rgb(0, 0, 0);
     text-transform: uppercase;
     cursor: pointer;
 }
 
+
 .btn-1:hover {
-    background-color: #ffcc12 ;
+    background-color: #0fedda ;
 
 }
 
@@ -72,6 +78,20 @@ input {
     justify-content: space-between;
     margin-bottom: 25px;
 }
+
+.logo-container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.logo-container img {
+    width: 200px; 
+    height: auto;
+    object-fit: fill;
+}
+
 
 @media(max-width:991px) {
     body {
