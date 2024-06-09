@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #7BBCD0;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
+    box-sizing: border-box;
+
+}
+
+.logo img {
+    height: 50px;
+    left: 20px;
+    top: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 35px;
+}
+
+nav ul li {
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px 20px;
+    position: relative
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #7BBCD0;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #d07bb4;
+}
+
+nav ul li .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    padding: 10px 0;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+nav ul li:hover .dropdown-menu, nav ul li:focus-within .dropdown-menu {
+    display: block;
+}
+
+nav ul li .dropdown-menu li {
+    padding: 10px 20px;
+}
+
+nav ul li .dropdown-menu li a {
+    color: #7BBCD0;
+}
+
+nav ul li .dropdown-menu li a:hover {
+    color: #d07bb4;
+    background-color: #f0f0f0;
+    border-radius: 15px;
+}
+
+main {
+    padding: 100px 20px 20px;
+}
+
+.hero {
+    background-color: #ffffff;
+    padding: 20px 10px;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 2000px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.hero h1 {
+    color: #007bff;
+    font-size: 50px;
+}
+
+.hero p {
+    color: #333;
+    font-size: 18px;
+    line-height: 1.6;
+}
