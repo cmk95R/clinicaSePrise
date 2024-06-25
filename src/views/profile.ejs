@@ -7,14 +7,17 @@
     <main class="profile--main">
         <div class="profile__main--box">
             <div class="profile__main__box--title">
-                <h2>Mi Perfil</h2>
+                <img class="img_logo" src="/images/Se Price/32.png" alt="" style="display: flex; align-items: center;width: 150px;">
+                <!-- <div class="profile__main__box__formbox--image"> -->
+                    <!-- <img id="avatarProfile" width="100px" src="/images/productos/userImages/<%= avatar || "Andres.jpg" %>" alt="Imagen de perfil" data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor: pointer; border-radius: 50%"> -->
+                <!-- </div> -->
+            </div>
+            <div class="profile_text_card">
+                <h2>Hola : <%= name %> </h2>
             </div>
             <div class="profile__main__box--formbox">
                 <form class="profile__main__box__formbox--formbox" action="/users/update?_method=PUT" method="post" enctype="multipart/form-data">
-
-                    <div class="profile__main__box__formbox--image">
-                        <img id="avatarProfile" width="100px" src="/images/productos/userImages/<%= avatar || "Andres.jpg" %>" alt="Imagen de perfil" data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor: pointer;">
-                    </div>
+                   
 
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -82,7 +85,7 @@
                     </div>
                     <div>
                         <button type="button" class="profile__main__box__formbox--button" data-bs-toggle="modal" data-bs-target="#MiexampleModalCenter">
-                            Mis Productos
+                            Mis Turnos
                         </button>
                         
                     </div>
@@ -99,7 +102,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">MIS PRODUCTOS</h5>
+          <h5 class="modal-title" id="exampleModalLongTitle">MIS TURNOS</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
           </button>
@@ -108,42 +111,51 @@
             <div class="table-responsive">
                 <table class="table table-hover mb-0">
                     <thead>
-                        <tr>
-                            <th>Imagen</th>
-                            <th>Nombre</th>
-                            <th>Precio</th>
-                            <th>Acciones</th>
+                        <!-- <tr>
+                            <th>Tipo</th>
+                            <th>Especialidad</th>
+                            <th>Profesional</th>
+                            <th>Piso</th>
+                            <th>Consultorio</th>
+                            <th>Fecha</th>
+                            <th>Hora</th>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <% locals.userProducts.forEach(product => { %>
+                        <tbody>
                             <tr>
-                                <td>
-                                    <% const productImages = product.images || []; %>
-                                    <% const firstImage = productImages[0]; %>
-                                    <% if (firstImage) { %>
-                                        <img src="/images/productos/<%= firstImage.name %>" alt="Imagen del Producto" style="width: 50px; height: 50px;">
-                                    <% } else { %>
-                                        <img src="/images/productos/default.png alt="Sin Imagen" style="width: 50px; height: 50px;">
-                                    <% } %>
-                                </td>
-                                <td data-toggle="modal" data-target="#exampleModalCenter"><%= product.name %> </td>
-       
-                                <td><%= product.price %></td>
-                                <td>
-                                    <a href="/products/edit/<%= product.id %>" class="btn btn-outline-primary  btn-action btn-edit">
-                                        <i class="fa-solid fa-pencil"></i> <!-- Icono de editar -->
-                                    </a>
-                                    <%- include('partials/modalDelete', { id: product.id, name: product.name }) %>
-                                    <button type="button" class="btn btn-outline-danger" onclick="abrirEliminarModal('<%= product.id %>')">
-                                        <i class="fas fa-trash-alt"></i> <!-- Icono de eliminar -->
-                                    </button>
-                                </td>
-                                
-                                
+                              <td>Consulta</td>
+                              <td>Cardiologia</td>
+                              <td>Juan Perez</td>
+                              <td>1ro</td>
+                              <td>A</td>
+                              <td>24/06/2024</td>
+                              <td>09:00</td>           
+                            </tr> -->
+
+                            <tr>
+                                <th>Estudios</th>
+                                <th>Descripcion</th>
+                                <th>Duracion</th>
+                                <th>Preparacion</th>
+                                <th>Fecha</th>
+                                <th>Hora</th>
+                                <th>Accion</th>
                             </tr>
-                        <% }); %>
-                    </tbody>
+                              <tr>
+                                <td>Hemograma</td>
+                                <td>Análisis de sangre completo </td>
+                                <td>30 Minutos</td>
+                                <td>No requiere ayuno</td>
+                                <td>27/06/2024</td>
+                                <td>14:00</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-danger btn-sm btn-action">Cancelar Turno</button>
+                                </td>
+                                           
+                                </tr>  
+                          </tbody>
+                    </thead>
+                    
+                    
                 </table>
             </div>
 
@@ -151,8 +163,8 @@
           
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">CERRAR</button>
-            <a href="/products/add" class="btn btn-outline-primary">
-                NUEVO PRODUCTO
+            <a href="/users/turnos" class="btn btn-outline-primary">
+                NUEVO TURNO
             </a>
           </div>
       </div>

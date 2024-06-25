@@ -1,5 +1,6 @@
 const { User, Avatars,Product,Image } = require('../../database/models')
 
+
 module.exports = async (req,res) => {
     try {      
         const user = await User.findByPk(req.session.userLogin.id, {

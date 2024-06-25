@@ -14,12 +14,19 @@
     padding-top: 10px;
 }
 
+.imglogo{
+    width: 40%;
+    position: absolute;
+    top: 18%;
+    left: 50%;
+
+}
 .home__header__back{
     padding: 40px 0;
     background-image: linear-gradient(
         90deg,
-        #3B89C7  25%,
-        #048cae 73%);
+        #ffffff  25%,
+        #ffffff 73%);
 }
 
 .menu{
@@ -36,9 +43,13 @@
 
 
 .logo img{
-    width: 80px;
+
+    height: auto;
+    /* border : 1px solid red; */
+    width: 120px;
     border-radius: 10%;
-    margin-bottom: 6px;
+    margin-left: 0%;
+    margin-bottom: 0px;
     margin-top: -5px;
 }
 
@@ -64,7 +75,7 @@ button{
     border: 0;
     
     border-radius: 0 5px 5px 0;
-    color: white;
+    color: rgb(255, 255, 255);
     cursor: pointer;
 }
 .button:hover{
@@ -80,7 +91,7 @@ button{
     text-decoration: none;
     font-size: 15px;
     padding: 20px;
-    color: white;
+    color: rgb(0, 0, 0);
     display: block;
 }
 
@@ -125,10 +136,20 @@ button{
 }
 
 @media (min-width: 768px){
+    .imglogo{
+        display: flex;
+
+    }
+    .logo {
+        display: flex;
+        justify-content: left;
+        margin-top: 5px;
+        padding-right: 50%;
+    }
     .menu .home__header__navbar ul li a{
         font-size: 15px;
         padding: 15px;
-        color: white;
+        color: rgb(0, 0, 0);
         display: block;
     }
 }
@@ -160,8 +181,8 @@ button{
         right: 0%;
         background-image: linear-gradient(
             90deg,
-            rgba(50, 173, 179, 0.9) 25%,
-            rgba(64, 135, 179, 0.9) 73%);
+            rgba(252, 255, 255, 0.9) 25%,
+            rgba(255, 255, 255, 0.9) 73%);
         
         display: none;
     }

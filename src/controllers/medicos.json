@@ -1,0 +1,120 @@
+{
+  "medicos": [
+    {
+      "nombre": "Juan",
+      "apellido": "Pérez",
+      "especialidad": "Cardiología",
+      "piso": "1ro",
+      "consultorio": "A",
+      "horarios_disponibles": [
+        { "fecha": "2024-06-25", "hora": "09:00" },
+        { "fecha": "2024-06-26", "hora": "10:00" },
+        { "fecha": "2024-06-28", "hora": "14:00" }
+      ]
+    },
+    {
+      "nombre": "María",
+      "apellido": "Gómez",
+      "especialidad": "Pediatría",
+      "piso": "2do",
+      "consultorio": "B",
+      "horarios_disponibles": [
+        { "fecha": "2024-06-27", "hora": "11:00" },
+        { "fecha": "2024-06-29", "hora": "15:00" }
+      ]
+    },
+    {
+      "nombre": "Carlos",
+      "apellido": "Rodríguez",
+      "especialidad": "Clínico",
+      "piso": "3ro",
+      "consultorio": "C",
+      "horarios_disponibles": [
+        { "fecha": "2024-06-26", "hora": "08:00" },
+        { "fecha": "2024-06-27", "hora": "09:00" },
+        { "fecha": "2024-06-29", "hora": "10:00" }
+      ]
+    },
+    {
+      "nombre": "Lucía",
+      "apellido": "Fernández",
+      "especialidad": "Infectología",
+      "piso": "4to",
+      "consultorio": "D",
+      "horarios_disponibles": [
+        { "fecha": "2024-06-28", "hora": "12:00" },
+        { "fecha": "2024-06-29", "hora": "14:00" }
+      ]
+    },
+    {
+      "nombre": "Miguel",
+      "apellido": "Martínez",
+      "especialidad": "Neumonología",
+      "piso": "1ro",
+      "consultorio": "B",
+      "horarios_disponibles": [
+        { "fecha": "2024-06-25", "hora": "10:00" },
+        { "fecha": "2024-06-27", "hora": "13:00" },
+        { "fecha": "2024-06-28", "hora": "15:00" }
+      ]
+    },
+    {
+      "nombre": "Ana",
+      "apellido": "López",
+      "especialidad": "Cardiología",
+      "piso": "2do",
+      "consultorio": "C",
+      "horarios_disponibles": [
+        { "fecha": "2024-06-26", "hora": "09:00" },
+        { "fecha": "2024-06-28", "hora": "11:00" }
+      ]
+    },
+    {
+      "nombre": "Luis",
+      "apellido": "García",
+      "especialidad": "Pediatría",
+      "piso": "3ro",
+      "consultorio": "D",
+      "horarios_disponibles": [
+        { "fecha": "2024-06-25", "hora": "14:00" },
+        { "fecha": "2024-06-27", "hora": "15:00" },
+        { "fecha": "2024-06-29", "hora": "16:00" }
+      ]
+    },
+    {
+      "nombre": "Elena",
+      "apellido": "Hernández",
+      "especialidad": "Clínico",
+      "piso": "4to",
+      "consultorio": "A",
+      "horarios_disponibles": [
+        { "fecha": "2024-06-26", "hora": "14:00" },
+        { "fecha": "2024-06-28", "hora": "16:00" }
+      ]
+    },
+    {
+      "nombre": "Roberto",
+      "apellido": "Torres",
+      "especialidad": "Infectología",
+      "piso": "1ro",
+      "consultorio": "C",
+      "horarios_disponibles": [
+        { "fecha": "2024-06-25", "hora": "11:00" },
+        { "fecha": "2024-06-27", "hora": "12:00" },
+        { "fecha": "2024-06-29", "hora": "13:00" }
+      ]
+    },
+    {
+      "nombre": "Laura",
+      "apellido": "Ruiz",
+      "especialidad": "Neumonología",
+      "piso": "2do",
+      "consultorio": "D",
+      "horarios_disponibles": [
+        { "fecha": "2024-06-25", "hora": "08:00" },
+        { "fecha": "2024-06-26", "hora": "10:00" },
+        { "fecha": "2024-06-29", "hora": "12:00" }
+      ]
+    }
+  ]
+}

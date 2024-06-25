@@ -7,9 +7,13 @@
 
     <main class="detalle__main">
       <div class="row">
-        <div class="col-12 col-md-10 col-lg-8 mx-auto mt-5">
+        <div class="col-12 col-md-10 col-lg-8 mx-auto mt-5" style="width: 480px; height: auto;">
           <div class="caja card mb-3 shadow-lg">
-            <div class="card-header">Registro de usuario</div>
+            <div class="login__main__box--title">
+              
+              <img class="img_logo" src="/images/Se Price/32.png" alt="" style="display: flex; width: 200px; ">
+          </div>
+            <div class="card-header">CREAR CUENTA !!!!  </div>
             <div class="card-body">
               <form
                 action="/users/registerOk"
@@ -18,8 +22,9 @@
                 id="formAdd"
               >
               
-                <div class="col-12 mb-3">
+                <div class="col-md-6 col-sm-6 col-xs-12">
                   <label for="name" class="form-label">Nombre</label>
+                  
                   <input
                     type="text"
                     class="form-control <%= locals.errors && (errors.name && 'is-invalid') %>"
@@ -30,8 +35,9 @@
                   <small class="text-danger ms-2" id="msgError-name">
                     <%= locals.errors && (errors.name && errors.name.msg) %>
                   </small>
+                  
                 </div>
-                <div class="col-12 mb-3">
+                <div class="col-md-6 col-sm-6 col-xs-12">
                   <label for="lastName" class="form-label">Apellido</label>
                   <input
                     type="text"
@@ -45,7 +51,7 @@
                     errors.lastName.msg) %>
                   </small>
                 </div>
-                <div class="col-12 mb-3">
+                <div class="col-md-6 col-sm-6 col-xs-12">
                   <label for="email" class="form-label">Email</label>
                   <input
                     type="email"
@@ -58,7 +64,7 @@
                     <%= locals.errors && (errors.email && errors.email.msg) %>
                   </small>
                 </div>
-                <div class="col-12 mb-3">
+                <div class="col-md-6 col-sm-6 col-xs-12">
                   <label for="password" class="form-label">Contraseña</label>
                   <div class="input-group mb-3">
                     <input
@@ -77,12 +83,9 @@
                     errors.password.msg) %>
                   </small>
                 </div>
-              
-                <div class="col-12 mb-3">
-                  <small class="text-danger ms-2" id="msgError-empty"></small>
-                </div>
+
                 <!-- ... Resto del formulario ... -->
-                <div class="col-12 mb-3">
+                <div class="col-md-6 col-sm-6 col-xs-12">
                   <label for="province" class="form-label">Provincia</label>
                   <select class="form-select" id="province" name="province">
                     <option value="" hidden selected>
@@ -95,14 +98,14 @@
                   ></small>
                 </div>
 
-                <div class="col-12 mb-3">
+                <div class="col-md-6 col-sm-6 col-xs-12">
                   <label for="city" class="form-label">Ciudad</label>
                   <select class="form-select" id="city" name="city">
                     <option value="" hidden selected>Elije tu ciudad...</option>
                   </select>
                   <small class="text-danger ms-2" id="msgError-city"></small>
                 </div>
-                <div class="col-12 mb-3">
+                <div class="col-md-6 col-sm-6 col-xs-12">
                   <label for="street" class="form-label">Calle</label>
                   <input
                     type="text"
@@ -115,6 +118,80 @@
                     <%= locals.errors && (errors.street &&
                     errors.street.msg) %>
                   </small>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <label for="fnac" class="form-label">Fecha de Nacimiento</label>
+                  <input
+                    type="date"
+                    class="form-control <%= locals.errors && (errors.fnac && 'is-invalid') %>"
+                    id="fnac"
+                    name="fnac"
+                  />
+                  <small class="text-danger ms-2" id="msgError-fnac">
+                    <%= locals.errors && (errors.fnac && errors.fnac.msg) %>
+                  </small>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <label for="obraSocial" class="form-label">¿Tiene Obra Social?</label>
+                  <div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input <%= locals.errors && (errors.obraSocial && 'is-invalid') %>"
+                        type="radio"
+                        name="obraSocial"
+                        id="obraSocialSi"
+                        value="si"
+                      />
+                      <label class="form-check-label" for="obraSocialSi">Sí</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input <%= locals.errors && (errors.obraSocial && 'is-invalid') %>"
+                        type="radio"
+                        name="obraSocial"
+                        id="obraSocialNo"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="obraSocialNo">No</label>
+                    </div>
+                  </div>
+                  <small class="text-danger ms-2" id="msgError-obraSocial">
+                    <%= locals.errors && (errors.obraSocial && errors.obraSocial.msg) %>
+                  </small>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <label for="telefono" class="form-label">Número de Teléfono</label>
+                  <input
+                    type="tel"
+                    class="form-control <%= locals.errors && (errors.telefono && 'is-invalid') %>"
+                    id="telefono"
+                    placeholder="Ingrese su número de teléfono"
+                    name="telefono"
+                  />
+                  <small class="text-danger ms-2" id="msgError-telefono">
+                    <%= locals.errors && (errors.telefono && errors.telefono.msg) %>
+                  </small>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <label for="dni" class="form-label">DNI</label>
+                  <input
+                    type="text"
+                    class="form-control <%= locals.errors && (errors.dni && 'is-invalid') %>"
+                    id="dni"
+                    placeholder="Ingrese su DNI"
+                    name="dni"
+                  />
+                  <small class="text-danger ms-2" id="msgError-dni">
+                    <%= locals.errors && (errors.dni && errors.dni.msg) %>
+                  </small>
+                </div>
+                
+                
+                <hr>
+                <div>
+                  <p>Al crear una cuenta aceptas las Condiciones de Uso y el Aviso de Privacidad de SePrice.com</p>
+                  <hr>
+                  <p>¿Ya tienes cuenta? <a href="/users/login">Iniciar Sesion</a></p>
                 </div>
                 <div class="d-flex justify-content-end">
                   <button type="submit" class="btn btn-dark">Registrate</button>

@@ -1,3 +1,7 @@
+.detalle__main{
+    background-image: url(/images/backgrounds/email-pattern.webp);
+
+} 
 .form-label , .form-control input-group-text{
     display: flex;
     justify-content: flex-start;
@@ -8,13 +12,13 @@
 }
 .card{
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     
 }
 .btn-dark{
     --bs-btn-color: #fff;
-    --bs-btn-bg: #4087b3;
-    --bs-btn-border-color: #067bf0;
+    --bs-btn-bg: rgb(47, 132, 212);
+    --bs-btn-border-color: rgb(47, 132, 212);
     --bs-btn-hover-color: #fff;
 
 }

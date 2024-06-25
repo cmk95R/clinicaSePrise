@@ -1,0 +1,41 @@
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 480px) {
+    .table {
+        display: block; /* Cambiar a block para evitar problemas de diseño en pantallas pequeñas */
+        width: 100%;
+        overflow-x: auto; /* Habilitar el desplazamiento horizontal si es necesario */
+        font-size: small;
+    }
+}
+
+/* Estilos para tabletas y dispositivos más grandes */
+@media (min-width: 481px) and (max-width: 768px) {
+    .table--container2 {
+        display: flex;
+        justify-content: center;
+        width: 861px; /* Ajustar el ancho según sea necesario */
+    }
+
+    .table {
+        display: block; /* Cambiar a block para evitar problemas de diseño en pantallas pequeñas */
+        width: 100%;
+        overflow-x: auto; /* Habilitar el desplazamiento horizontal si es necesario */
+        font-size: small;
+    }
+
+    
+}
+
+/* Estilos para laptops y dispositivos más grandes */
+@media (min-width: 769px) {
+    .table--container2 {
+        display: flex;
+        justify-content: center;
+    }
+
+    .table {
+        width: 100%;
+        font-size: medium; /* Ajustar el tamaño de la fuente para laptops */
+    }
+}

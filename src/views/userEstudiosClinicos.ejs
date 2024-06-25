@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head') %>
+  <body>
+    <!--Barra de navegación-->
+
+    <%- include('partials/header') %>
+
+    <main style="background-image: url(/images/backgrounds/email-pattern.webp);">
+      <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"
+                >Estudios Clinicos</a
+              >
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+
+      <div class="card--container3" >
+        <div class="" style="margin-bottom: 1rem; ">
+          <div class="card">
+            <div
+              class="card-header d-flex align-items-center justify-content-between"
+            >
+              <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
+                <div>
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                      Estudios Clinicos Disponibles
+                    </li>
+                  </ol>
+                </div>
+              </nav>
+              <div class="pagination">
+                <ul class="pagination">
+                  <li class="page-number">
+                    <a href="" class=""></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="container mt-5">
+              <h1 class="mb-4"></h1>
+
+              <!-- Este codigo genera las tarjetas correspondientes en cuanto a los estudios clinicos   -->
+              <div class="row">
+                <% estudiosClinicos.forEach((estudio, index) => { %>
+                <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <h5 class="card-title"><%= estudio.nombre %></h5>
+                      <p class="card-text"><strong>Descripción:</strong> <%= estudio.descripcion %></p>
+                      <p class="card-text"><strong>Duración:</strong> <%= estudio.duracion %></p>
+                      <p class="card-text"><strong>Preparación:</strong> <%= estudio.preparacion %></p>
+                      <a href="/users/turnosEstudiosClinicos">
+                        <button type="button" class="btn btn-outline-primary btn-sm btn-abrir-modal" data-index="<%= index %>">Sacar Turno</button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <% }) %>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- Modal -->
+<div class="modal fade" id="modalTurno" tabindex="-1" aria-labelledby="modalTurnoLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTurnoLabel">Detalle del Turno</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Profesional: <span id="modalProfesional"></span></p>
+        <p>Especialidad: <span id="modalEspecialidad"></span></p>
+        <p>Piso: <span id="modalPiso"></span></p>
+        <p>Consultorio: <span id="modalConsultorio"></span></p>
+        <p>Fecha: <span id="modalFecha"></span></p>
+        <p>Hora: <span id="modalHora"></span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <a href="#" id="btnDescargarComprobante" class="btn btn-primary">Descargar Comprobante</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </main>
+    <!-- Incluir html2canvas -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+   <!-- JavaScript para abrir el modal y descargar el comprobante -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const botonesAbrirModal = document.querySelectorAll('.btn-abrir-modal');
+    const modalTurno = new bootstrap.Modal(document.getElementById('modalTurno'), {
+      keyboard: false
+    });
+
+    botonesAbrirModal.forEach((boton, index) => {
+      boton.addEventListener('click', function () {
+        const filaTurno = document.querySelectorAll('.table tbody tr')[index];
+        const profesional = filaTurno.cells[0].innerText;
+        const especialidad = filaTurno.cells[1].innerText;
+        const piso = filaTurno.cells[2].innerText;
+        const consultorio = filaTurno.cells[3].innerText;
+        const fecha = filaTurno.querySelector('.fechaSelect').value;
+        const hora = filaTurno.querySelector('.horariosSelect').value;
+
+
+        document.getElementById('modalProfesional').innerText = profesional;
+        document.getElementById('modalEspecialidad').innerText = especialidad;
+        document.getElementById('modalPiso').innerText = piso;
+        document.getElementById('modalConsultorio').innerText = consultorio;
+        document.getElementById('modalFecha').innerText = new Date(fecha).toLocaleDateString();
+        document.getElementById('modalHora').innerText = hora;
+
+        // Configuración del botón descargar comprobante
+        const btnDescargar = document.getElementById('btnDescargarComprobante');
+        btnDescargar.addEventListener('click', function () {
+          const contenidoComprobante = `
+            Turno Confimado 
+            Profesional: ${profesional}
+            Especialidad: ${especialidad}
+            Piso: ${piso}
+            Consultorio: ${consultorio}
+            Fecha: ${new Date(fecha).toLocaleDateString()}
+            Hora: ${hora}
+          `;
+
+          // Simular descarga del comprobante (puedes adaptar según el formato y tipo de archivo que necesites)
+          const blob = new Blob([contenidoComprobante], { type: 'text/plain' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'comprobante_turno.txt';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+        });
+
+        modalTurno.show();
+      });
+    });
+  });
+</script>
+
+  </body>
+  <%- include('partials/footer') %>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head') %>
+  <body>
+    <!--Barra de navegación-->
+    <%- include('partials/header') %>
+
+    <main_userTurnos>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Estudios Clinicos Disponibles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/users/medicos">Profesionales</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/users/especialidades">Especialidades</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="table--container2">
+        <div class="col-md-8 col-md-4 mt-3" style="margin-bottom: 1rem;">
+          <div class="card">
+            <div class="card-header d-flex align-items-center justify-content-between">
+              <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
+                <div>
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Turnos Disponibles</li>
+                  </ol>
+                </div>
+              </nav>
+              <div class="pagination">
+                <ul class="pagination">
+                  <li class="page-number">
+                    <a href="" class=""></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <table class="table">
+              <thead class="thead-dark">
+                <tr class="bg-primary text-white">
+                  <th scope="col">Estudios</th>
+                  <th scope="col">Descripción</th>
+                  <th scope="col">Duración</th>
+                  <th scope="col">Preparación</th>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Hora</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% estudiosClinicos.forEach((estudio, index) => { %>
+                <tr>
+                  <td><%= estudio.nombre %></td>
+                  <td><%= estudio.descripcion %></td>
+                  <td><%= estudio.duracion %></td>
+                  <td><%= estudio.preparacion %></td>
+                  <td>
+                    <select class="form-select fechaSelect" name="fechaSelect">
+                      <% if (estudio.horarios_disponibles && estudio.horarios_disponibles.length > 0) { %>
+                      <% estudio.horarios_disponibles.forEach((horario) => { %>
+                      <option value="<%= horario.fecha %>">
+                        <%= new Date(horario.fecha).toLocaleDateString() %>
+                      </option>
+                      <% }) %>
+                      <% } else { %>
+                      <option disabled>No hay fechas disponibles</option>
+                      <% } %>
+                    </select>
+                  </td>
+                  <td>
+                    <select class="form-select horariosSelect" name="horariosSelect">
+                      <% if (estudio.horarios_disponibles && estudio.horarios_disponibles.length > 0) { %>
+                      <% estudio.horarios_disponibles.forEach((horario) => { %>
+                      <option value="<%= horario.hora %>">
+                        <%= horario.hora %>
+                      </option>
+                      <% }) %>
+                      <% } else { %>
+                      <option disabled>No hay horarios disponibles</option>
+                      <% } %>
+                    </select>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm btn-abrir-modal">Seleccionar Turno</button>
+                  </td>
+                </tr>
+                <% }) %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="modalTurno" tabindex="-1" aria-labelledby="modalTurnoLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalTurnoLabel">Detalle del Turno</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Estudio a Realizar: <span id="modalEstudio"></span></p>
+              <p>Descripción: <span id="modalDescripcion"></span></p>
+              <p>Duración: <span id="modalDuracion"></span></p>
+              <p>Preparación: <span id="modalPreparacion"></span></p>
+              <p>Fecha: <span id="modalFecha"></span></p>
+              <p>Hora: <span id="modalHora"></span></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <a href="#" id="btnDescargarComprobante" class="btn btn-primary">Descargar Comprobante</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- JavaScript para abrir el modal y descargar el comprobante -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const botonesAbrirModal = document.querySelectorAll('.btn-abrir-modal');
+        const modalTurno = new bootstrap.Modal(document.getElementById('modalTurno'), {
+          keyboard: false
+        });
+
+        botonesAbrirModal.forEach((boton, index) => {
+          boton.addEventListener('click', function () {
+            const filaTurno = document.querySelectorAll('.table tbody tr')[index];
+            const estudio = filaTurno.cells[0].innerText;
+            const descripcion = filaTurno.cells[1].innerText;
+            const duracion = filaTurno.cells[2].innerText;
+            const preparacion = filaTurno.cells[3].innerText;
+            const fecha = filaTurno.querySelector('.fechaSelect').value;
+            const hora = filaTurno.querySelector('.horariosSelect').value;
+
+            document.getElementById('modalEstudio').innerText = estudio;
+            document.getElementById('modalDescripcion').innerText = descripcion;
+            document.getElementById('modalDuracion').innerText = duracion;
+            document.getElementById('modalPreparacion').innerText = preparacion;
+            document.getElementById('modalFecha').innerText = new Date(fecha).toLocaleDateString();
+            document.getElementById('modalHora').innerText = hora;
+
+            // Configuración del botón descargar comprobante
+            const btnDescargar = document.getElementById('btnDescargarComprobante');
+            btnDescargar.onclick = function () {
+              const contenidoComprobante = `
+                Turno Confirmado 
+                Estudio a Realizar: ${estudio}
+                Descripción: ${descripcion}
+                Duración: ${duracion}
+                Preparación: ${preparacion}
+                Fecha: ${new Date(fecha).toLocaleDateString()}
+                Hora: ${hora}
+              `;
+
+              // Simular descarga del comprobante (puedes adaptar según el formato y tipo de archivo que necesites)
+              const blob = new Blob([contenidoComprobante], { type: 'text/plain' });
+              const url = URL.createObjectURL(blob);
+              const a = document.createElement('a');
+              a.href = url;
+              a.download = 'comprobante_turno.txt';
+              document.body.appendChild(a);
+              a.click();
+              document.body.removeChild(a);
+              URL.revokeObjectURL(url);
+            };
+
+            modalTurno.show();
+          });
+        });
+      });
+    </script>
+
+    <%- include('partials/footer') %>
+  </body>
+</html>

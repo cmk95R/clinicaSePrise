@@ -8,12 +8,28 @@ const loginProcess = require('../controllers/users/loginProcess');
 const notUserCheck = require('../middlewares/notUserCheck');
 const { arrayValidaciones, validateCreateForm } = require('../middlewares/validacionesRegister');
 const arrayValidationUpdate  = require('../validations/validationUpdate');
+const userTurnos = require("../controllers/users/userTurnos")
+const userMedicos = require ("../controllers/users/userMedicos")
+const userEspecialidades = require ("../controllers/users/userEspecialidades")
+const userEstudiosClinicos = require ("../controllers/users/userEstudiosClinicos")
+const userTurnosEstudiosClinicos = require ("../controllers/users/userTurnosEstudiosClinicos")
+
 
 
 /* GET users listing. */
 router.get('/login', loginProcess.showLoginPage);
 router.post('/login', loginValidator, loginProcess.processLogin);
 router.get('/register' ,notUserCheck,usersController.register)
+router.get('/turnos', userTurnos)
+router.get('/medicos', userMedicos)
+router.get('/especialidades', userEspecialidades)
+router.get('/estudiosClinicos', userEstudiosClinicos)
+router.get('/turnosEstudiosClinicos', userTurnosEstudiosClinicos)
+
+
+
+
+
 router.post('/registerOk',arrayValidaciones,validateCreateForm,usersController.newUser);
 router.get('/logOut', usersController.logOut);
 router.get('/profile/', userCheck, usersController.profile);

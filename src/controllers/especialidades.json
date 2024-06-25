@@ -1,0 +1,25 @@
+{
+    "especialidades": [
+      {
+        "id": 1,
+        "nombre": "Cardiología"
+      },
+      {
+        "id": 2,
+        "nombre": "Pediatría"
+      },
+      {
+        "id": 3,
+        "nombre": "Clínico"
+      },
+      {
+        "id": 4,
+        "nombre": "Infectología"
+      },
+      {
+        "id": 5,
+        "nombre": "Neumonología"
+      }
+    ]
+  }
+  

@@ -2,6 +2,9 @@ const { validationResult } = require("express-validator");
 const { hashSync } = require("bcryptjs");
 const db = require("../../database/models");
 
+
+// Validacion , Creacion de Usuario en la base de datos con sus datos correspondientes 
+// redireciona al usuario si el registro es exitoso o si hay problemas
 module.exports = (req, res) => {
   const errors = validationResult(req);
 
@@ -12,6 +15,9 @@ module.exports = (req, res) => {
       lastName: lastName.trim(),
       email: email.trim(),
       password: hashSync(password, 10),
+      cobertura: cobertura.trim(),
+      dni: dni.trim(),
+
       roleId: 2,
     })
       .then((user) => {

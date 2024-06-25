@@ -6,54 +6,207 @@
 
       <%- include('partials/header') %>
 
-      <!-- <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-           <img src="/images/modal/Modal-Navidad.png" alt="">
-        </div>
-    </div> -->
-
         <main class="home__main">
           <div class="hero-image">
-            <img class="banner" src="/images/banner.png" alt="">
-            <div class="hero-text">
-              <h1>Todavia sirve</h1>
-              <p>Todo lo que buscas en nuevos y usados!</p>
-              <button>
-                <p> <a href="/products/add">Publicar</a></p>
-              </button>
-              
-            </div>
-            <div class="publi">
-              <img class="publi_img" src="/images/publi.webp" alt="" style="height: 200px;" width="1700px" >
-
+            <img class="banner" src="/images/Medicus/fond7.jpg" alt="">
+            <img class="imglogo" src="/images/Se Price/32.png" alt="">
+            <div class="heroinfo">
+              <h1>Solucion Medica Digital</h1>
+              <p>
+                Desde la tranquilidad de tu hogar con total confianza.
+                <br>
+                <b>"Salud en línea, tranquilidad en casa"</b>
+              </p>
             </div>
           </div>
+          <div class="container-fluid py-5">
+            <div class="container" style="display: flex; flex-wrap: wrap; justify-content: center;">
+                <div class="row gx-5">
+                    <div class="imgnene col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
+                        <div class="position-relative h-100" >
+                            <img class="position-absolute w-100 h-100 rounded" src="images/Medicus/fond4.jpg" style="object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="sobre">
+                            <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Sobre Nosotros</h5>
+                            
+                            <h1 class="display-4">La mejor atención médica para usted y su familia</h1>
 
-          <div class="card-container_home" >
-            <% products.forEach(producto=> { %>
-              <div class="card_home">
-                <a href="/products/detail/<%= producto.id %>">
-                  <% if (producto.images && producto.images.length> 0) { %>
-                    <img src="/images/productos/<%= producto.images[0].name %>" alt="">
-                    <% } else { %>
-                      <p>No image available</p>
-                      <% } %>
-                </a>
-                <div class="card-content_home">
-                  <p class="card-name">
-                    <%= producto.name %>
-                  </p>
-                  <p class="price"><b>$<%= producto.price.toLocaleString('es-ES') %>
-                  </b></p>
-                  <p class="card-descripcion">
-                    <%= producto.description %>
-                  </p>
+                        </div>
+                        <p>A lo largo de más de 25 años de trayectoria en prestigio y excelencia médica, nuestra Clinica ha forjado una tradición y filosofía de trabajo enfocadas en la atención centrada en el paciente y su familia.</p>
+                        <div class="row g-3 pt-3">
+                            <div class="col-sm-3 col-6">
+                                <div class="bg-light text-center rounded-circle py-4">
+                                    <i class="fa fa-3x fa-user-md text-primary mb-3"></i>
+                                    <h6 class="mb-0">Medicos<small class="d-block text-primary">Calificados</small></h6>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-6">
+                                <div class="bg-light text-center rounded-circle py-4">
+                                    <i class="fa fa-3x fa-procedures text-primary mb-3"></i>
+                                    <h6 class="mb-0">Servicio<small class="d-block text-primary">Emergencia</small></h6>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-6">
+                                <div class="bg-light text-center rounded-circle py-4">
+                                    <i class="fa fa-3x fa-microscope text-primary mb-3"></i>
+                                    <h6 class="mb-0">Estudios<small class="d-block text-primary">Clinicos</small></h6>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-6">
+                                <div class="bg-light text-center rounded-circle py-4">
+                                    <i class="fa fa-3x fa-ambulance text-primary mb-3"></i>
+                                    <h6 class="mb-0">Traslado<small class="d-block text-primary">Garantizado</small></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <% }); %>
+            </div>
+        </div>
+            <!-- Services Start -->
+            <div class="text-center mx-auto mb-5" style="max-width: 500px;">
+              <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Servicio</h5>
+              <h1 class="display-4">Excelente Servicio Medico</h1>
           </div>
+    <div class="container-fluid py-5">
+      <div class="container">
+          
+          <div class="row g-5">
+              <div class="col-lg-4 col-md-6">
+                  <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                      <div class="service-icon mb-4" style="width: 150px; height: 150px;" >
+                        <i class="fa-solid fa-flask-vial fa-5x text-primary mb-3"></i>                      
+                      </div>
+                      <h4 class="mb-3">Estudios Clinicos</h4>
+                      <p class="m-0">SePrice ofrece estudios clínicos precisos y avanzados para diagnósticos confiables.</p>
+                      <div class="boton-services" >
+                        <a class="btn btn-lg btn-primary rounded-pill" href="/users/estudiosClinicos" >
+                          <i class="bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                      
+                  </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                  <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                      <div class="service-icon mb-4">
+                        <i class="fa-regular fa-hospital fa-5x text-primary mb-3" ></i>
+                      </div>
+                      <h4 class="mb-3">Consultorios Externos</h4>
+                      <p class="m-0">"Ofrecemos consultorios externos con personal experto para atención médica especializada y cercana.</p>
+                      <div class="boton-services" >
+                        <a class="btn btn-lg btn-primary rounded-pill" href="/users/turnos" >
+                          <i class="bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                  <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                      <div class="service-icon mb-4">
+                        <i class="fa-solid fa-hand-holding-medical fa-5x text-primary mb-3"></i>                      
+                      </div>
+                      <h4 class="mb-3">Consultas En Linea</h4>
+                      <p class="m-0">Accede a consultas médicas desde casa con nuestros profesionales calificados.</p>
+                      <div class="boton-services" >
+                        <a class="btn btn-lg btn-primary rounded-pill" href="" >
+                          <i class="bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                  <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                      <div class="service-icon mb-4">
+                        <i class="fa-solid fa-calendar-days fa-5x text-primary mb-3"></i>
+                      </div>
+                      <h4 class="mb-3">Agenda Clinica</h4>
+                      <p class="m-0">Programa citas fácilmente y recibe recordatorios con nuestra agenda en línea.</p>
+                      <div class="boton-services" >
+                        <a class="btn btn-lg btn-primary rounded-pill" href="" >
+                          <i class="bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                  <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                      <div class="service-icon mb-4">
+                        <i class="fa-solid fa-user-nurse fa-5x text-primary mb-3"></i>
+                      </div>
+                      <h4 class="mb-3">Turnos Por Guardia</h4>
+                      <p class="m-0">Atención médica inmediata las 24/7 para emergencias y situaciones urgentes.</p>
+                      <div class="boton-services" >
+                        <a class="btn btn-lg btn-primary rounded-pill" href="" >
+                          <i class="bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                  <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                      <div class="service-icon mb-4">
+                        <i class="fa-solid fa-syringe fa-5x text-primary mb-3"></i>
+                      </div>
+                      <h4 class="mb-3">Analisis de Sangre</h4>
+                      <p class="m-0">"SePrice ofrece análisis de sangre precisos y rápidos con tecnología avanzada para diagnósticos confiables."</p>
+                      <div class="boton-services" >
+                        <a class="btn btn-lg btn-primary rounded-pill" href="" >
+                          <i class="bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 
+          <
+        <section>
+          <div class="container-fluid pt-5">
+            <div class="container" style="display: flex; flex-wrap: wrap; justify-content: center;">
+                <div class="text-center mx-auto mb-5" style="max-width: 500px;">
+                    <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">¿Alguna Pregunta?</h5>
+                    <h1 class="display-4">Contactanos</h1>
+                </div>
+                <div class="row g-5 mb-5">
+                    <div class="col-lg-4">
+                        <div class="bg-light rounded d-flex flex-column align-items-center justify-content-center text-center" style="height: 200px;">
+                            <div class="d-flex align-items-center justify-content-center bg-primary rounded-circle mb-4" style="width: 100px; height: 70px; transform: rotate(-15deg);">
+                                <i class="fa fa-2x fa-location-arrow text-white" style="transform: rotate(15deg);"></i>
+                            </div>
+                            <h6 class="mb-0">Av Lezama - Capital Federal </h6>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="bg-light rounded d-flex flex-column align-items-center justify-content-center text-center" style="height: 200px;">
+                            <div class="d-flex align-items-center justify-content-center bg-primary rounded-circle mb-4" style="width: 100px; height: 70px; transform: rotate(-15deg);">
+                                <i class="fa fa-2x fa-phone text-white" style="transform: rotate(15deg);"></i>
+                            </div>
+                            <h6 class="mb-0">+541157239469</h6>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="bg-light rounded d-flex flex-column align-items-center justify-content-center text-center" style="height: 200px;">
+                            <div class="d-flex align-items-center justify-content-center bg-primary rounded-circle mb-4" style="width: 100px; height: 70px; transform: rotate(-15deg);">
+                                <i class="fa fa-2x fa-envelope-open text-white" style="transform: rotate(15deg);"></i>
+                            </div>
+                            <h6 class="mb-0">seprice@clinica.com</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact End -->
+          <div class="galeriaimg" style="margin-top: 40px; margin-left: 5%; margin-right: 2%; margin-bottom: 5%;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13133.49073303128!2d-58.48418801284178!3d-34.6200212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc9dae0729b7d%3A0xa3287368b7856a99!2sCl%C3%ADnica%20Ayres!5e0!3m2!1ses-419!2sar!4v1718724200945!5m2!1ses-419!2sar" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          
+          
+        </section>
+            
         </main>
         <%- include('partials/footer') %>
 

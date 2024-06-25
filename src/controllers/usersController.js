@@ -1,3 +1,5 @@
+const userEstudiosClinicos = require('./users/userEstudiosClinicos');
+
 module.exports = {
     login : (req,res) => {
         return res.render('login');
@@ -15,4 +17,12 @@ module.exports = {
     profile : require('./users/profile'),
 
     newUser: require('./users/createUser'),
+    userTurnos:require("./users/userTurnos"),
+    userMedicos:require("./users/userMedicos"),
+    userEspecialidades:require("./users/userEspecialidades"),
+    userEstudiosClinicos:require("./users/userEstudiosClinicos"),
+    userTurnosEstudiosClinicos:require("./users/userTurnosEstudiosClinicos")
+    
+
+
 }

@@ -1,0 +1,16 @@
+[
+    {
+        "fecha": "2024-06-25",
+        "hora": "09:00",
+        "detalle": "Consulta regular",
+        "profesional": "Juan Pérez",
+        "especialidad": "Cardiología"
+    },
+    {
+        "fecha": "2024-06-26",
+        "hora": "10:00",
+        "detalle": "Control mensual",
+        "profesional": "Juan Pérez",
+        "especialidad": "Cardiología"
+    }
+]

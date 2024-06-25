@@ -1,0 +1,134 @@
+{
+  "estudiosClinicos": [
+      {
+          "idEstudio": 1,
+          "nombre": "Hemograma Completo",
+          "descripcion": "Análisis de sangre completo que incluye el recuento de glóbulos rojos, glóbulos blancos y plaquetas.",
+          "precio": 50,
+          "duracion": "30 minutos",
+          "preparacion": "No requiere ayuno.",
+          "horarios_disponibles": [
+              { "fecha": "2024-06-25", "hora": "09:00" },
+              { "fecha": "2024-06-26", "hora": "10:00" },
+              { "fecha": "2024-06-28", "hora": "14:00" }
+          ]
+      },
+      {
+          "idEstudio": 2,
+          "nombre": "Perfil Lipídico",
+          "descripcion": "Estudio que mide los niveles de colesterol total, LDL, HDL y triglicéridos en la sangre.",
+          "precio": 70,
+          "duracion": "30 minutos",
+          "preparacion": "Requiere 12 horas de ayuno.",
+          "horarios_disponibles": [
+              { "fecha": "2024-06-25", "hora": "09:30" },
+              { "fecha": "2024-06-26", "hora": "10:30" },
+              { "fecha": "2024-06-28", "hora": "14:30" }
+          ]
+      },
+      {
+          "idEstudio": 3,
+          "nombre": "Glucemia en Ayunas",
+          "descripcion": "Prueba para medir el nivel de glucosa en la sangre después de un período de ayuno.",
+          "precio": 30,
+          "duracion": "15 minutos",
+          "preparacion": "Requiere 8 horas de ayuno.",
+          "horarios_disponibles": [
+              { "fecha": "2024-06-25", "hora": "10:00" },
+              { "fecha": "2024-06-26", "hora": "11:00" },
+              { "fecha": "2024-06-28", "hora": "15:00" }
+          ]
+      },
+      {
+          "idEstudio": 4,
+          "nombre": "Electrocardiograma (ECG)",
+          "descripcion": "Prueba que registra la actividad eléctrica del corazón.",
+          "precio": 100,
+          "duracion": "20 minutos",
+          "preparacion": "No requiere preparación especial.",
+          "horarios_disponibles": [
+              { "fecha": "2024-06-25", "hora": "10:15" },
+              { "fecha": "2024-06-26", "hora": "11:15" },
+              { "fecha": "2024-06-28", "hora": "15:15" }
+          ]
+      },
+      {
+          "idEstudio": 5,
+          "nombre": "Radiografía de Tórax",
+          "descripcion": "Imágenes de rayos X del tórax para evaluar los pulmones y el corazón.",
+          "precio": 150,
+          "duracion": "20 minutos",
+          "preparacion": "No requiere preparación especial.",
+          "horarios_disponibles": [
+              { "fecha": "2024-06-25", "hora": "10:35" },
+              { "fecha": "2024-06-26", "hora": "11:35" },
+              { "fecha": "2024-06-28", "hora": "15:35" }
+          ]
+      },
+      {
+          "idEstudio": 6,
+          "nombre": "Ultrasonido Abdominal",
+          "descripcion": "Estudio de imagen que utiliza ondas sonoras para visualizar los órganos abdominales.",
+          "precio": 200,
+          "duracion": "45 minutos",
+          "preparacion": "Requiere 8 horas de ayuno y beber agua antes del estudio.",
+          "horarios_disponibles": [
+              { "fecha": "2024-06-25", "hora": "10:55" },
+              { "fecha": "2024-06-26", "hora": "11:55" },
+              { "fecha": "2024-06-28", "hora": "15:55" }
+          ]
+      },
+      {
+          "idEstudio": 7,
+          "nombre": "Prueba de Función Pulmonar",
+          "descripcion": "Evalúa la capacidad respiratoria y la función de los pulmones.",
+          "precio": 80,
+          "duracion": "30 minutos",
+          "preparacion": "Evitar fumar y el uso de inhaladores 6 horas antes del estudio.",
+          "horarios_disponibles": [
+              { "fecha": "2024-06-25", "hora": "11:40" },
+              { "fecha": "2024-06-26", "hora": "12:40" },
+              { "fecha": "2024-06-28", "hora": "16:40" }
+          ]
+      },
+      {
+          "idEstudio": 8,
+          "nombre": "Ecocardiograma",
+          "descripcion": "Ultrasonido del corazón para evaluar su estructura y función.",
+          "precio": 250,
+          "duracion": "45 minutos",
+          "preparacion": "No requiere preparación especial.",
+          "horarios_disponibles": [
+              { "fecha": "2024-06-25", "hora": "12:10" },
+              { "fecha": "2024-06-26", "hora": "13:10" },
+              { "fecha": "2024-06-28", "hora": "17:10" }
+          ]
+      },
+      {
+          "idEstudio": 9,
+          "nombre": "Colonoscopia",
+          "descripcion": "Examen del colon y el recto mediante un endoscopio.",
+          "precio": 500,
+          "duracion": "1-2 horas",
+          "preparacion": "Requiere preparación intestinal previa.",
+          "horarios_disponibles": [
+              { "fecha": "2024-06-25", "hora": "12:55" },
+              { "fecha": "2024-06-26", "hora": "13:55" },
+              { "fecha": "2024-06-28", "hora": "17:55" }
+          ]
+      },
+      {
+          "idEstudio": 10,
+          "nombre": "Tomografía Computarizada (TC)",
+          "descripcion": "Imágenes detalladas de áreas específicas del cuerpo utilizando rayos X.",
+          "precio": 400,
+          "duracion": "30-60 minutos",
+          "preparacion": "Dependiendo de la zona a estudiar, puede requerir ayuno.",
+          "horarios_disponibles": [
+              { "fecha": "2024-06-25", "hora": "14:30" },
+              { "fecha": "2024-06-26", "hora": "15:30" },
+              { "fecha": "2024-06-28", "hora": "19:30" }
+          ]
+      }
+  ]
+}

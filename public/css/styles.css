@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+
 @import '/css/general.css';
 @import '/css/header.css';
+@import '/css/estudiosClinicos.css';
+@import '/css/userTurnos.css';
 @import '/css/admin.css';
 @import '/css/carrito.css';
 @import '/css/home.css';
